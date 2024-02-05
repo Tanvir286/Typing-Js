@@ -20,10 +20,8 @@
 //     typejs()
 // },300)
 
-let myCondition = false;
-const button = document.getElementById("myButton");
 
-const wordToDisplay = "Tohomina";  // Word to display
+const wordToDisplay = "MD. Tanvir Ahamed Soysov";  // Word to display
 const typeElement = document.querySelector('.type'); // HTML element with the class 'type'
 const characters = wordToDisplay.split(''); // Split the word into an array of characters
 
@@ -37,12 +35,11 @@ function typeWord() {
         typeElement.innerHTML += characters[currentIndex];
         currentIndex++;
         text = typeElement.innerHTML.split('');
-    } else if (myCondition) {
+    } else {
         text.pop();
         typeElement.innerHTML = text.join('');
         if (text.length === 0) {
             currentIndex = 0;
-            myCondition = false;
         }
     }
 }
@@ -52,12 +49,3 @@ console.log(characters);
 
 // Set an interval to call the 'typeWord' function every 300 milliseconds
 let typingInterval = setInterval(typeWord, 300);
-
-button.addEventListener("click", function() {
-    myCondition = true;
-});
-
-
-
-
-     
